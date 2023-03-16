@@ -11,13 +11,23 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="flex">
     <!-- Contenitore elementi Vue JS -->
-    <div id="app" class="global_container">
+    <div id="app" class="global_container flex">
         <!-- Inizio Sezione barra laterale contatti -->
         <section class="aside_bar">
-            <header class="aside_header">
-                PROVA1
+            <header class="aside_header flex">
+                <div class="avatar_box flex">
+                    <div class="img_box">
+                        <a href=""><img src="img/avatar_io.jpg" alt="avatar"></a>
+                    </div>
+                    <div id="avatar_name">Sofia</div>
+                </div>
+                <ul class="aside_icons flex">
+                    <li><a href="#"><i class="fa-solid fa-rotate-right"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                </ul>
             </header>
             <div class="search">
                 PROVA2

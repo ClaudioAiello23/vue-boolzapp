@@ -40,6 +40,7 @@ REGOLE VARIABLES
     --container_height: calc(var(--default_height) - 5%);
     --container_width: calc(var(--default_width) - 20%);
     --header_footer_height: calc(var(--container_height)/10);
+    --aside_width: 28rem;
 }
 
 /* 
@@ -52,51 +53,74 @@ body{
     height: var(--default_height);
     background-color: #009688; /* For browsers that do not support gradients */
     background-image: linear-gradient(to top, #dbdbd3 80%, #009688 80%); 
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .global_container{
     width: var(--container_width);
-    height: var(--container_height);
-    display: flex;    
+    height: var(--container_height); 
+}
+
+.flex{
+    display: flex;
 }
 
 /* 
 *************************
-MAIN
+GLOBAL CONTAINER
 ************************* 
 */
 /* SEZIONE ASIDE BAR CONTATTI */
 
 .aside_bar{
-    width: 25rem;
-    height: inherit;;
+    width: var(--aside_width);
+    height: inherit;
 }
 
 .aside_header, .header_main{
     height: var(--header_footer_height);
     background-color: #eaeaea;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.avatar_box{
+    align-items: center;
+}
+
+.img_box{
+    height: calc(var(--header_footer_height) - 2rem);
+    width: calc(var(--header_footer_height) - 1rem);
+    padding: 0 .3125rem;
+}
+
+.img_box img{
+    max-width: 100%;
+    border-radius: 100%;
+}
+
+.aside_icons{
+    list-style: none;
+    padding-right: .625rem;
+}
+
+.aside_icons li a{
+    text-decoration: none;
+    color:#b1b1b1;
+    padding: 0 .625rem;
+}
 
 /* SEZIONE CENTRAL CONTAINER MESSAGGI */
 
 .central_container{
-    width: calc(var(--container_width) - 25rem);
+    width: calc(var(--container_width) - var(--aside_width));
 }
 
 .box_main{
     height: calc(var(--container_height) - var(--header_footer_height)*2);
     background-image: url(../img/mine.jpg);
 }
-
-/* 
-*************************
-FOOTER
-************************* 
-*/
 
 .footer_main{
    background-color: #F3EEEA;

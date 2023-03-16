@@ -16,12 +16,9 @@ REGOLE SETUP
 ************************* 
 */
 
-.global_container{
-    border: 3px solid black; 
-}
-
 .aside_bar{
     background-color: white;
+    border: 1px solid black;
 }
 
 .aside_header, .header_main{
@@ -30,7 +27,7 @@ REGOLE SETUP
 
 .footer_main{
     border-top: 1px solid black;
-}
+} 
 
 /* 
 *************************
@@ -40,8 +37,8 @@ REGOLE VARIABLES
 :root{
     --default_height: 100vh;
     --default_width: 100vw;
-    --container_width: calc(var(--default_width) - 20%);
     --container_height: calc(var(--default_height) - 5%);
+    --container_width: calc(var(--default_width) - 20%);
     --header_footer_height: calc(var(--container_height)/10);
 }
 
@@ -75,7 +72,7 @@ MAIN
 
 .aside_bar{
     width: 25rem;
-    height: inherit;
+    height: inherit;;
 }
 
 .aside_header, .header_main{

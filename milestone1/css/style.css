@@ -9,3 +9,33 @@ REGOLE DI RESET
     margin: 0;
     box-sizing: border-box;
 }
+
+/* 
+*************************
+REGOLE SETUP
+************************* 
+*/
+
+.global_container{
+    border: 1px solid black; 
+}
+
+/* 
+*************************
+REGOLE COMMON
+************************* 
+*/
+
+body{
+    height: 100vh;
+    background-color: #009688; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to top, #dbdbd3 80%, #009688 80%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.global_container{
+    width: calc(100vw - 20%);
+    height: calc(100vh - 10%); 
+}

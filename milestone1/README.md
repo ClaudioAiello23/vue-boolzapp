@@ -6,3 +6,4 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 Svolgimento:
 - importare in file JS la struttura dati di partenza.
 - lavorare su Html e Css per implementare la grafica richiesta dalla bozza.
+- implementare la logica con V-for e V-bind per la lettura del nome e dell'immagine utente dalla struttura array di partenza.

@@ -191,6 +191,7 @@ GLOBAL CONTAINER
     background-image: url(../img/mine.jpg);
     flex-direction: column;
     padding: 3.125rem 6.25rem;
+    overflow: auto;
 }
 
 .m_sent_box, .m_received_box{

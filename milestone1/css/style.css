@@ -17,7 +17,32 @@ REGOLE SETUP
 */
 
 .global_container{
-    border: 1px solid black; 
+    border: 3px solid black; 
+}
+
+.aside_bar{
+    background-color: white;
+}
+
+.aside_header, .header_main{
+    border-bottom: 1px solid black;
+}
+
+.footer_main{
+    border-top: 1px solid black;
+}
+
+/* 
+*************************
+REGOLE VARIABLES
+************************* 
+*/
+:root{
+    --default_height: 100vh;
+    --default_width: 100vw;
+    --container_width: calc(var(--default_width) - 20%);
+    --container_height: calc(var(--default_height) - 5%);
+    --header_footer_height: calc(var(--container_height)/10);
 }
 
 /* 
@@ -27,7 +52,7 @@ REGOLE COMMON
 */
 
 body{
-    height: 100vh;
+    height: var(--default_height);
     background-color: #009688; /* For browsers that do not support gradients */
     background-image: linear-gradient(to top, #dbdbd3 80%, #009688 80%); 
     display: flex;
@@ -36,6 +61,47 @@ body{
 }
 
 .global_container{
-    width: calc(100vw - 20%);
-    height: calc(100vh - 10%); 
+    width: var(--container_width);
+    height: var(--container_height);
+    display: flex;    
+}
+
+/* 
+*************************
+MAIN
+************************* 
+*/
+/* SEZIONE ASIDE BAR CONTATTI */
+
+.aside_bar{
+    width: 25rem;
+    height: inherit;
+}
+
+.aside_header, .header_main{
+    height: var(--header_footer_height);
+    background-color: #eaeaea;
+}
+
+
+/* SEZIONE CENTRAL CONTAINER MESSAGGI */
+
+.central_container{
+    width: calc(var(--container_width) - 25rem);
+}
+
+.box_main{
+    height: calc(var(--container_height) - var(--header_footer_height)*2);
+    background-image: url(../img/mine.jpg);
+}
+
+/* 
+*************************
+FOOTER
+************************* 
+*/
+
+.footer_main{
+   background-color: #F3EEEA;
+   height: var(--header_footer_height);
 }

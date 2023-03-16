@@ -12,16 +12,6 @@ REGOLE DI RESET
 
 /* 
 *************************
-REGOLE SETUP
-************************* 
-*/
-
-.footer_main{
-    border-top: 1px solid black;
-} 
-
-/* 
-*************************
 REGOLE VARIABLES
 ************************* 
 */
@@ -132,7 +122,7 @@ GLOBAL CONTAINER
 }
 
 .aside_container .search_form{
-    padding: .625rem .9375rem;
+    padding: .625rem;
 }
 
 .aside_container button {
@@ -149,7 +139,7 @@ GLOBAL CONTAINER
 }
 
 .contact_container{
-    height: calc(var(--container_height) - 310px);
+    height: calc(var(--container_height) - 19.375rem);
     overflow: auto;
 }
 .contact_box{
@@ -157,7 +147,7 @@ GLOBAL CONTAINER
     padding: .3125rem 0;
 }
 
-.contact_info{
+.contact_aside_info{
     align-self: start;
     padding-left: .625rem;
     padding-top: .3125rem ;
@@ -183,16 +173,69 @@ GLOBAL CONTAINER
 .header_main {
     border-left: 1px solid lightgray;
 }
+
+.contact_central_info{
+    padding-left: .625rem;
+}
+
+.contact_last_access{
+    color: grey;
+}
+
 .central_container{
     width: calc(var(--container_width) - var(--aside_width));
 }
 
-.box_main{
+.message_container{
     height: calc(var(--container_height) - var(--header_footer_height)*2);
     background-image: url(../img/mine.jpg);
+    flex-direction: column;
+    padding: 3.125rem 6.25rem;
+}
+
+.m_sent_box, .m_received_box{
+    border-radius: .3125rem;
+    padding: 0.625rem .3125rem 0.625rem 0.625rem;
+}
+
+.m_sent_box{
+    width: 40%;
+    align-self: end;
+    margin-bottom: .5rem;
+    justify-content: space-between;
+    background-color: #d5f9ba;
+}
+
+.m_received_box{
+    width: 40%;
+    align-self: start;
+    margin-bottom: .5rem;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.time_message{
+    font-size: .625rem;
+    color: grey;
+    align-self: end;
 }
 
 .footer_main{
    background-color: #F3EEEA;
    height: var(--header_footer_height);
+   justify-content: space-between;
+   align-items: center;
+}
+
+footer .keyboard_mex{
+    flex-grow: 1;border-radius: .3125rem;
+    padding: 15px;
+    border: none;
+}
+
+.central_container footer a{
+    text-decoration: none;
+    color:#b1b1b1;
+    padding: 0 1.875rem 0 1.875rem;
+    font-size: 1.5625rem;
 }

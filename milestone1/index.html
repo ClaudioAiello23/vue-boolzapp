@@ -15,9 +15,8 @@
     <!-- Contenitore elementi Vue JS -->
     <div id="app" class="global_container flex">
 
-        <!-- Inizio container barra laterale Aside -->
-        <div class="aside_container">
-
+        <!-- INIZIO CONTAINER BARRA LATERALE ASIDE -->
+        <aside class="aside_container">
             <!-- Inizio sezione Aside header -->
             <header class="aside_header flex">
                 <div class="avatar_box flex">
@@ -57,7 +56,7 @@
             <section class="contact_container">
                 <div class="contact_box flex">
                     <div class="img_box"><a href=""><img src="img/avatar_1.jpg" alt="avatar"></a></div>
-                    <div class="contact_info">
+                    <div class="contact_aside_info">
                         <div class="contact_name">Michele</div>
                         <div class="contact_last_message">Ultimo messaggio inviato</div>
                     </div>
@@ -65,19 +64,21 @@
                 </div>
             </section>
             <!-- Fine sezione Aside contact -->
-         
+        </aside>
+        <!-- FINE CONTAINER BARRA LATERALE ASIDE -->
 
-        </div>
-        <!-- Fine container barra laterale Aside -->
-
-        <!-- Inizio Sezione main central-->
-        <section class="central_container">
+        <!-- INIZIO CONTAINER MAIN CENTRAL-->
+        <main class="central_container">
+            <!-- Inizio sezione Central header -->
             <header class="header_main flex">
                 <div class="avatar_box flex">
                     <div class="img_box">
                         <a href=""><img src="img/avatar_1.jpg" alt="avatar"></a>
                     </div>
-                    <div class="avatar_name">Michele</div>
+                    <div class="contact_central_info">
+                        <div class="contact_name">Michele</div>
+                        <div class="contact_last_access">Ultimo accesso oggi alle 12.00</div>
+                    </div>
                 </div>
                 <ul class="header_icons flex">
                     <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
@@ -85,14 +86,35 @@
                     <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
                 </ul>
             </header>
-            <main class="box_main">
-                PROVA5
-            </main>
-            <footer class="footer_main">
-                PROVA6
+            <!-- Fine sezione Central header -->
+
+            <!-- Inizio sezione message container -->
+            <section class="message_container flex">
+                <div class="m_sent_box flex">
+                    <div class="sent_message">Hai portato a spasso il cane?</div>
+                    <div class="time_message">12.00</div>
+                </div>
+                <div class="m_sent_box flex">
+                    <div class="sent_message">Ricordati di stendere i panni!</div>
+                    <div class="time_message">12.00</div>
+                </div>
+                <div class="m_received_box flex">
+                    <div class="received_message">Già fatto!</div>
+                    <div class="time_message">12.00</div>
+                </div>
+            </section>
+            <!-- Fine sezione message container -->
+
+            <!-- Inizio sezione footer main central -->
+            <footer class="footer_main flex">
+                <a href="#" class="smile_icon"><i class="fa-regular fa-face-smile"></i></a>
+                <input class="keyboard_mex" type="text" placeholder="Scrivi un messaggio">
+                <a href="#" class="microphone_icon"><i class="fa-solid fa-microphone"></i></a>
             </footer>
-        </section>
-        <!-- Fine Sezione main central -->
+            <!-- Fine sezione footer main central -->
+
+        </main>
+        <!-- FINE CONTAINER MAIN CENTRAL -->
     </div>
     <!-- /Contenitore elementi Vue JS -->
 

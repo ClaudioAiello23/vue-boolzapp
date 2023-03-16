@@ -122,12 +122,29 @@ GLOBAL CONTAINER
 
 .alert > .img_box img{
     max-width: 100%;
-    padding-top: 10px;
-    padding-left: 3px;
+    padding-top: .625rem;
+    padding-left: .1875rem;
 }
 
 .alert_mex{
     padding-top: 1.25rem;
+}
+
+.aside_bar form{
+    padding: .625rem .9375rem;
+}
+
+.aside_bar button {
+    padding: .625rem 1.875rem;
+    background-color: white;
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+.aside_bar input{
+    flex-grow: 1;
+    padding: .625rem;
+    border: 1px solid lightgray
 }
 
 /* SEZIONE CENTRAL CONTAINER MESSAGGI */

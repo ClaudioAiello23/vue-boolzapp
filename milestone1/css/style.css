@@ -16,15 +16,6 @@ REGOLE SETUP
 ************************* 
 */
 
-.aside_bar{
-    background-color: white;
-    border: 1px solid black;
-}
-
-.aside_header, .header_main{
-    border-bottom: 1px solid black;
-}
-
 .footer_main{
     border-top: 1px solid black;
 } 
@@ -76,6 +67,7 @@ GLOBAL CONTAINER
 .aside_bar{
     width: var(--aside_width);
     height: inherit;
+    background-color: white;
 }
 
 .aside_header, .header_main{
@@ -90,8 +82,8 @@ GLOBAL CONTAINER
 }
 
 .img_box{
-    height: calc(var(--header_footer_height) - 2rem);
-    width: calc(var(--header_footer_height) - 1rem);
+    height: calc(var(--header_footer_height) - 0.2rem);
+    width: calc(var(--header_footer_height) - 0.2rem);
     padding: 0 .3125rem;
 }
 
@@ -100,19 +92,23 @@ GLOBAL CONTAINER
     border-radius: 100%;
 }
 
-.aside_icons{
+.header_icons{
     list-style: none;
     padding-right: .625rem;
 }
 
-.aside_icons li a{
+.header_icons li a{
     text-decoration: none;
     color:#b1b1b1;
     padding: 0 .625rem;
+    font-size: 1.5625rem;
 }
 
 /* SEZIONE CENTRAL CONTAINER MESSAGGI */
 
+.header_main {
+    border-left: 1px solid lightgray;
+}
 .central_container{
     width: calc(var(--container_width) - var(--aside_width));
 }

@@ -64,7 +64,7 @@ GLOBAL CONTAINER
 */
 /* SEZIONE ASIDE BAR CONTATTI */
 
-.aside_bar{
+.aside_container{
     width: var(--aside_width);
     height: inherit;
     background-color: white;
@@ -107,6 +107,7 @@ GLOBAL CONTAINER
 .alert{
     background-color: #8edafc;
 }
+
 .alert > .img_box{
     height: 3.75rem;
     width: 3.75rem;
@@ -130,21 +131,51 @@ GLOBAL CONTAINER
     padding-top: 1.25rem;
 }
 
-.aside_bar form{
+.aside_container .search_form{
     padding: .625rem .9375rem;
 }
 
-.aside_bar button {
+.aside_container button {
     padding: .625rem 1.875rem;
     background-color: white;
     border: 1px solid lightgray;
     cursor: pointer;
 }
 
-.aside_bar input{
+.aside_container input{
     flex-grow: 1;
     padding: .625rem;
     border: 1px solid lightgray
+}
+
+.contact_container{
+    height: calc(var(--container_height) - 310px);
+    overflow: auto;
+}
+.contact_box{
+    border-bottom: 1px solid lightgray;
+    padding: .3125rem 0;
+}
+
+.contact_info{
+    align-self: start;
+    padding-left: .625rem;
+    padding-top: .3125rem ;
+    flex-grow: 1;
+}
+
+.contact_name{
+    font-size: 1.125rem;
+}
+
+.contact_last_message, .access_hour{
+    color: #c6b9c1;
+}
+
+.access_hour{
+    align-self: start;
+    font-size: .75rem;
+    padding: .625rem .625rem 0 0;
 }
 
 /* SEZIONE CENTRAL CONTAINER MESSAGGI */

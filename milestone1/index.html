@@ -14,8 +14,11 @@
 <body class="flex">
     <!-- Contenitore elementi Vue JS -->
     <div id="app" class="global_container flex">
-        <!-- Inizio Sezione barra laterale contatti -->
-        <section class="aside_bar">
+
+        <!-- Inizio container barra laterale Aside -->
+        <div class="aside_container">
+
+            <!-- Inizio sezione Aside header -->
             <header class="aside_header flex">
                 <div class="avatar_box flex">
                     <div class="img_box">
@@ -29,7 +32,10 @@
                     <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
                 </ul>
             </header>
-            <div class="alert flex">
+            <!-- Fine sezione Aside header -->
+
+            <!-- Inizio sezione Aside alert -->
+            <section class="alert flex">
                 <div class="img_box">
                     <a href="#"><img src="img/bell-slash-solid.svg" alt="bell"></a>
                 </div>
@@ -37,22 +43,33 @@
                     <div>Ricevi notifiche di nuovi messaggi</div>
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
-            </div>
-            <form class="flex">
+            </section>
+            <!-- Fine sezione Aside alert -->
+
+            <!-- Inizio sezione Aside search bar -->
+            <section class="search_form flex">
                 <button type="button"><i class="fa fa-search"></i></button>
                 <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
-            </form>
-            <main class="aside_main flex">
-                <div class="avatar_box flex">
+            </section>
+            <!-- Fine sezione Aside search bar -->
+
+            <!-- Inizio sezione Aside contact -->
+            <section class="contact_container">
+                <div class="contact_box flex">
                     <div class="img_box"><a href=""><img src="img/avatar_1.jpg" alt="avatar"></a></div>
-                    <div class="avatar_name">Michele</div>
+                    <div class="contact_info">
+                        <div class="contact_name">Michele</div>
+                        <div class="contact_last_message">Ultimo messaggio inviato</div>
+                    </div>
+                    <div class="access_hour">12.00</div>
                 </div>
-                <div class="user_hour">
-                    <a href="#"><i class="fa-solid fa-rotate-right"></i></a>
-                </div>
-            </main>
-        </section>
-        <!-- Fine Sezione barra laterale contatti -->
+            </section>
+            <!-- Fine sezione Aside contact -->
+         
+
+        </div>
+        <!-- Fine container barra laterale Aside -->
+
         <!-- Inizio Sezione main central-->
         <section class="central_container">
             <header class="header_main flex">

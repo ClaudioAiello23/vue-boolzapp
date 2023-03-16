@@ -31,7 +31,7 @@ REGOLE VARIABLES
     --container_height: calc(var(--default_height) - 5%);
     --container_width: calc(var(--default_width) - 20%);
     --header_footer_height: calc(var(--container_height)/10);
-    --aside_width: 28rem;
+    --aside_width: 30rem;
 }
 
 /* 
@@ -102,6 +102,32 @@ GLOBAL CONTAINER
     color:#b1b1b1;
     padding: 0 .625rem;
     font-size: 1.5625rem;
+}
+
+.alert{
+    background-color: #8edafc;
+}
+.alert > .img_box{
+    height: 3.75rem;
+    width: 3.75rem;
+    margin: .625rem;
+    background-color:white;
+    border-radius: 100%;
+}
+
+.alert > .img_box a{
+    height: 3.75rem;
+    width: 3.75rem;
+}
+
+.alert > .img_box img{
+    max-width: 100%;
+    padding-top: 10px;
+    padding-left: 3px;
+}
+
+.alert_mex{
+    padding-top: 1.25rem;
 }
 
 /* SEZIONE CENTRAL CONTAINER MESSAGGI */

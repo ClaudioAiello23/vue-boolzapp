@@ -1,6 +1,6 @@
 /* 
 *************************
-REGOLE DI RESET 
+RESET RULES 
 ************************* 
 */
 
@@ -12,7 +12,7 @@ REGOLE DI RESET
 
 /* 
 *************************
-REGOLE VARIABLES
+VARIABLES
 ************************* 
 */
 :root{
@@ -26,7 +26,7 @@ REGOLE VARIABLES
 
 /* 
 *************************
-REGOLE COMMON
+COMMON RULES
 ************************* 
 */
 
@@ -49,11 +49,12 @@ body{
 
 /* 
 *************************
-GLOBAL CONTAINER
+GLOBAL RULES
 ************************* 
 */
-/* SEZIONE ASIDE BAR CONTATTI */
+/* SECTION ASIDE CONTAINER */
 
+/* Aside header */
 .aside_container{
     width: var(--aside_width);
     height: inherit;
@@ -94,6 +95,7 @@ GLOBAL CONTAINER
     font-size: 1.5625rem;
 }
 
+/* Aside alert */
 .alert{
     background-color: #8edafc;
 }
@@ -104,32 +106,28 @@ GLOBAL CONTAINER
     margin: .625rem;
     background-color:white;
     border-radius: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .alert > .img_box a{
-    height: 3.75rem;
-    width: 3.75rem;
-}
-
-.alert > .img_box img{
-    max-width: 100%;
-    padding-top: .625rem;
-    padding-left: .1875rem;
+    color: #8edafc;
+    font-size: 1.5625rem;
 }
 
 .alert_mex{
     padding-top: 1.25rem;
 }
 
+/* Aside Search */
 .aside_container .search_form{
     padding: .625rem;
 }
 
-.aside_container button {
+.aside_container .search_icon {
     padding: .625rem 1.875rem;
     background-color: white;
     border: 1px solid lightgray;
-    cursor: pointer;
 }
 
 .aside_container input{
@@ -138,10 +136,12 @@ GLOBAL CONTAINER
     border: 1px solid lightgray
 }
 
+/* Aside contacts */
 .contact_container{
     height: calc(var(--container_height) - 19.375rem);
     overflow: auto;
 }
+
 .contact_box{
     border-bottom: 1px solid lightgray;
     padding: .3125rem 0;
@@ -168,8 +168,9 @@ GLOBAL CONTAINER
     padding: .625rem .625rem 0 0;
 }
 
-/* SEZIONE CENTRAL CONTAINER MESSAGGI */
+/* SECTION CENTRAL CONTAINER */
 
+/* Central header */
 .header_main {
     border-left: 1px solid lightgray;
 }
@@ -182,6 +183,7 @@ GLOBAL CONTAINER
     color: grey;
 }
 
+/* Central message container */
 .central_container{
     width: calc(var(--container_width) - var(--aside_width));
 }
@@ -221,6 +223,7 @@ GLOBAL CONTAINER
     align-self: end;
 }
 
+/* Central footer */
 .footer_main{
    background-color: #F3EEEA;
    height: var(--header_footer_height);

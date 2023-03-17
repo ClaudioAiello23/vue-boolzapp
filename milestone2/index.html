@@ -95,14 +95,16 @@
             <!-- Fine sezione Central header -->
 
             <!-- Inizio sezione message container -->
-            <section class="message_container flex">
-                <div class="my_mex_box flex" v-for="(contact, position) in contacts">
-                    <div class="my_mex">{{ contacts[selectedContact].messages[position] }}</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="contact_mex_box flex">
-                    <div class="contact_mex">prova</div>
-                    <div class="time_message">12.00</div>
+            <section class="message_container">
+                <div class="message_box flex" v-for="(mex, position) in contacts[selectedContact].messages">
+                    <div class="my_mex_box flex">
+                        <div class="my_mex">{{ mex.message }}</div>
+                        <div class="time_message">12.00</div>
+                    </div>
+                    <div class="contact_mex_box flex">
+                        <div class="contact_mex">prova</div>
+                        <div class="time_message">12.00</div>
+                    </div>
                 </div>
             </section>
             <!-- Fine sezione message container -->

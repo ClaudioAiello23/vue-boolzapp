@@ -200,9 +200,12 @@ GLOBAL RULES
 .message_container{
     height: calc(var(--container_height) - var(--header_footer_height)*2);
     background-image: url(../img/mine.jpg);
-    flex-direction: column;
-    padding: 3.125rem 6.25rem;
     overflow: auto;
+}
+
+.message_box{
+    flex-direction: column;
+    padding: 1.5625rem 9.375rem;
 }
 
 .my_mex_box, .contact_mex_box{

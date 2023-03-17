@@ -96,8 +96,8 @@
 
             <!-- Inizio sezione message container -->
             <section class="message_container flex">
-                <div v-for="(contact, position) in contacts" class="my_mex_box flex">
-                    <div class="my_mex">{{ contacts[position].messages }}</div>
+                <div class="my_mex_box flex" v-for="(contact, position) in contacts">
+                    <div class="my_mex">{{ contacts[selectedContact].messages[position] }}</div>
                     <div class="time_message">12.00</div>
                 </div>
                 <div class="contact_mex_box flex">

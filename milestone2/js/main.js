@@ -10,6 +10,7 @@ la funzione createApp*/
 createApp({
     data() {
         return {
+            contactIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -175,8 +176,16 @@ createApp({
             ]
         }
     },
-
+    
     methods:{
+        /*Funzione che cerca la posizione del contatto selezionata; si può 
+        applicare al click su un contatto AsideBar per far apparire la
+        corrispondente conversazione nel main central*/
+        selectedContact (position) {
+            this.contactIndex = position;
+        },
         
     }
+    
 }).mount('#app')
+

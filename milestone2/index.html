@@ -13,7 +13,7 @@
 
 <body class="flex">
     <!-- Contenitore elementi Vue JS -->
-    <div id="app" class="global_container flex">
+    <div id="app" class="global_container flex" v-cloak>
 
         <!-- INIZIO CONTAINER BARRA LATERALE ASIDE -->
         <aside class="aside_container">
@@ -55,7 +55,7 @@
             <!-- Inizio sezione Aside contact -->
             <section class="contact_container">
                 <!-- Ciclo V-for (VueJS) per ciclare nome/immagine dell'object Array contacts file JS -->
-                <div class="contact_box flex" v-for="contact in contacts">
+                <div class="contact_box flex" v-for="(contact, position) in contacts">
                     <div class="img_box">
                         <a href="">
                             <!-- V-bind (VueJS) per agganciare la foto avatar dall'object Array contacts file JS -->
@@ -63,7 +63,7 @@
                         </a>
                     </div>
                     <div class="contact_aside_info">
-                        <div class="contact_name"> {{ contact.name }}</div>
+                        <div class="contact_name">{{ contact.name }}</div>
                         <div class="contact_last_message">Ultimo messaggio inviato</div>
                     </div>
                     <div class="access_hour">12.00</div>
@@ -96,60 +96,12 @@
 
             <!-- Inizio sezione message container -->
             <section class="message_container flex">
-                <div class="m_sent_box flex">
-                    <div class="sent_message">Parlo da solo</div>
+                <div v-for="(contact, position) in contacts" class="my_mex_box flex">
+                    <div class="my_mex">{{ contact.messages[position] }}</div>
                     <div class="time_message">12.00</div>
                 </div>
-                <div class="m_sent_box flex">
-                    <div class="sent_message">Sto delirando!</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">A</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">I</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">U</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">T</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">O</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_sent_box flex">
-                    <div class="sent_message">Scusa sai mica che ore sono?</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">Ma se l'orario è scritto su Buozz App pirlun! proprio qui a fianco!</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">E comunque sarebbe anche ora che ti comprassi un orologio anche scamuzzo, barbun!!</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_sent_box flex">
-                    <div class="sent_message">Non posso comprarlo, sto facendo un corso!</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_received_box flex">
-                    <div class="received_message">E che brazzo c'entra questo?</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_sent_box flex">
-                    <div class="sent_message">Vabbè vado a studiare VueJS!</div>
-                    <div class="time_message">12.00</div>
-                </div>
-                <div class="m_sent_box flex">
-                    <div class="sent_message">PS Ricordati di stendere i panni!</div>
+                <div class="contact_mex_box flex">
+                    <div class="contact_mex">{{ contacts[0].messages[0].message }}</div>
                     <div class="time_message">12.00</div>
                 </div>
             </section>

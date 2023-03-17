@@ -10,6 +10,10 @@ RESET RULES
     box-sizing: border-box;
 }
 
+[v-cloak]{
+    display: none;
+}
+
 /* 
 *************************
 VARIABLES
@@ -196,12 +200,12 @@ GLOBAL RULES
     overflow: auto;
 }
 
-.m_sent_box, .m_received_box{
+.my_mex_box, .contact_mex_box{
     border-radius: .3125rem;
     padding: 0.625rem .3125rem 0.625rem 0.625rem;
 }
 
-.m_sent_box{
+.my_mex_box{
     width: 40%;
     align-self: end;
     margin-bottom: .5rem;
@@ -209,7 +213,7 @@ GLOBAL RULES
     background-color: #d5f9ba;
 }
 
-.m_received_box{
+.contact_mex_box{
     width: 40%;
     align-self: start;
     margin-bottom: .5rem;

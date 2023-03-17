@@ -1,0 +1,245 @@
+/* 
+*************************
+RESET RULES 
+************************* 
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+*************************
+VARIABLES
+************************* 
+*/
+:root{
+    --default_height: 100vh;
+    --default_width: 100vw;
+    --container_height: calc(var(--default_height) - 5%);
+    --container_width: calc(var(--default_width) - 20%);
+    --header_footer_height: calc(var(--container_height)/10);
+    --aside_width: 30rem;
+}
+
+/* 
+*************************
+COMMON RULES
+************************* 
+*/
+
+body{
+    height: var(--default_height);
+    background-color: #009688; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to top, #dbdbd3 80%, #009688 80%); 
+    justify-content: center;
+    align-items: center;
+}
+
+.global_container{
+    width: var(--container_width);
+    height: var(--container_height); 
+}
+
+.flex{
+    display: flex;
+}
+
+/* 
+*************************
+GLOBAL RULES
+************************* 
+*/
+/* SECTION ASIDE CONTAINER */
+
+/* Aside header */
+.aside_container{
+    width: var(--aside_width);
+    height: inherit;
+    background-color: white;
+}
+
+.aside_header, .header_main{
+    height: var(--header_footer_height);
+    background-color: #eaeaea;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar_box{
+    align-items: center;
+}
+
+.img_box{
+    height: calc(var(--header_footer_height) - 0.2rem);
+    width: calc(var(--header_footer_height) - 0.2rem);
+    padding: 0 .3125rem;
+}
+
+.img_box img{
+    max-width: 100%;
+    border-radius: 100%;
+}
+
+.header_icons{
+    list-style: none;
+    padding-right: .625rem;
+}
+
+.header_icons li a{
+    text-decoration: none;
+    color:#b1b1b1;
+    padding: 0 .625rem;
+    font-size: 1.5625rem;
+}
+
+/* Aside alert */
+.alert{
+    background-color: #8edafc;
+}
+
+.alert > .img_box{
+    height: 3.75rem;
+    width: 3.75rem;
+    margin: .625rem;
+    background-color:white;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert > .img_box a{
+    color: #8edafc;
+    font-size: 1.5625rem;
+}
+
+.alert_mex{
+    padding-top: 1.25rem;
+}
+
+/* Aside Search */
+.aside_container .search_form{
+    padding: .625rem;
+}
+
+.aside_container .search_icon {
+    padding: .625rem 1.875rem;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.aside_container input{
+    flex-grow: 1;
+    padding: .625rem;
+    border: 1px solid lightgray
+}
+
+/* Aside contacts */
+.contact_container{
+    height: calc(var(--container_height) - 19.375rem);
+    overflow: auto;
+}
+
+.contact_box{
+    border-bottom: 1px solid lightgray;
+    padding: .3125rem 0;
+}
+
+.contact_aside_info{
+    align-self: start;
+    padding-left: .625rem;
+    padding-top: .3125rem ;
+    flex-grow: 1;
+}
+
+.contact_name{
+    font-size: 1.125rem;
+}
+
+.contact_last_message, .access_hour{
+    color: #c6b9c1;
+}
+
+.access_hour{
+    align-self: start;
+    font-size: .75rem;
+    padding: .625rem .625rem 0 0;
+}
+
+/* SECTION CENTRAL CONTAINER */
+
+/* Central header */
+.header_main {
+    border-left: 1px solid lightgray;
+}
+
+.contact_central_info{
+    padding-left: .625rem;
+}
+
+.contact_last_access{
+    color: grey;
+}
+
+/* Central message container */
+.central_container{
+    width: calc(var(--container_width) - var(--aside_width));
+}
+
+.message_container{
+    height: calc(var(--container_height) - var(--header_footer_height)*2);
+    background-image: url(../img/mine.jpg);
+    flex-direction: column;
+    padding: 3.125rem 6.25rem;
+    overflow: auto;
+}
+
+.m_sent_box, .m_received_box{
+    border-radius: .3125rem;
+    padding: 0.625rem .3125rem 0.625rem 0.625rem;
+}
+
+.m_sent_box{
+    width: 40%;
+    align-self: end;
+    margin-bottom: .5rem;
+    justify-content: space-between;
+    background-color: #d5f9ba;
+}
+
+.m_received_box{
+    width: 40%;
+    align-self: start;
+    margin-bottom: .5rem;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.time_message{
+    font-size: .625rem;
+    color: grey;
+    align-self: end;
+}
+
+/* Central footer */
+.footer_main{
+   background-color: #F3EEEA;
+   height: var(--header_footer_height);
+   justify-content: space-between;
+   align-items: center;
+}
+
+footer .keyboard_mex{
+    flex-grow: 1;border-radius: .3125rem;
+    padding: 15px;
+    border: none;
+}
+
+.central_container footer a{
+    text-decoration: none;
+    color:#b1b1b1;
+    padding: 0 1.875rem 0 1.875rem;
+    font-size: 1.5625rem;
+}

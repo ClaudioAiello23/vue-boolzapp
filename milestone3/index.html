@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <!-- Collegamento Cdn Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Collegamento file CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="flex">
+    <!-- Contenitore elementi Vue JS -->
+    <div id="app" class="global_container flex" v-cloak>
+
+        <!-- INIZIO CONTAINER BARRA LATERALE ASIDE -->
+        <aside class="aside_container">
+            <!-- Inizio sezione Aside header -->
+            <header class="aside_header flex">
+                <div class="avatar_box flex">
+                    <div class="img_box">
+                        <a href=""><img src="img/avatar_io.jpg" alt="avatar"></a>
+                    </div>
+                    <div class="avatar_name">Sofia</div>
+                </div>
+                <ul class="header_icons flex">
+                    <li><a href="#"><i class="fa-solid fa-rotate-right"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                </ul>
+            </header>
+            <!-- Fine sezione Aside header -->
+
+            <!-- Inizio sezione Aside alert -->
+            <section class="alert flex">
+                <div class="img_box flex">
+                    <a href="#"><i class="fa-solid fa-bell-slash"></i></a>
+                </div>
+                <div class="alert_mex">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </section>
+            <!-- Fine sezione Aside alert -->
+
+            <!-- Inizio sezione Aside search bar -->
+            <section class="search_form flex">
+                <div class="search_icon"><i class="fa fa-search"></i></div>
+                <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
+            </section>
+            <!-- Fine sezione Aside search bar -->
+
+            <!-- Inizio sezione Aside contact -->
+            <section class="contact_container">
+                <!-- Ciclo V-for (VueJS) per ciclare nome/immagine dell'object Array contacts file JS -->
+                <div class="contact_box flex" v-for="(contact, position) in contacts" @click="activeContact(position)" v-bind:class="isSelected(position)">
+                    <div class="img_box">
+                        <a href="">
+                            <!-- V-bind (VueJS) per agganciare la foto avatar dall'object Array contacts file JS -->
+                            <img v-bind:src="contact.avatar" alt="avatar">
+                        </a>
+                    </div>
+                    <div class="contact_aside_info">
+                        <div class="contact_name">{{ position }}{{ contact.name }}</div>
+                        <div class="contact_last_message">Ultimo messaggio inviato</div>
+                    </div>
+                    <div class="access_hour">12.00</div>
+                </div>
+            </section>
+            <!-- Fine sezione Aside contact -->
+        </aside>
+        <!-- FINE CONTAINER BARRA LATERALE ASIDE -->
+
+        <!-- INIZIO CONTAINER MAIN CENTRAL-->
+        <main class="central_container">
+            <!-- Inizio sezione Central header -->
+            <header class="header_main flex">
+                <div class="avatar_box flex">
+                    <div class="img_box">
+                        <a href=""><img v-bind:src="contacts[selectedContact].avatar" alt="avatar"></a>
+                    </div>
+                    <div class="contact_central_info">
+                        <div class="contact_name">{{ contacts[selectedContact].name}}</div>
+                        <div class="contact_last_access">Ultimo accesso oggi alle 12.00</div>
+                    </div>
+                </div>
+                <ul class="header_icons flex">
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                </ul>
+            </header>
+            <!-- Fine sezione Central header -->
+
+            <!-- Inizio sezione message container -->
+            <section class="message_container">
+                <div class="message_box flex" v-for="(mex, position) in contacts[selectedContact].messages">
+                    <div v-if="mex.status === 'sent'" class="my_mex_box flex">
+                        <div class="my_mex">{{ mex.message }}</div>
+                        <div class="time_message">12.00</div>
+                    </div>
+                    <div v-else class="contact_mex_box flex">
+                        <div class="contact_mex">{{ mex.message }}</div>
+                        <div class="time_message">12.00</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fine sezione message container -->
+
+            <!-- Inizio sezione footer main central -->
+            <footer class="footer_main flex">
+                <a href="#" class="smile_icon"><i class="fa-regular fa-face-smile"></i></a>
+                <input class="keyboard_mex" type="text" placeholder="Scrivi un messaggio">
+                <a href="#" class="microphone_icon"><i class="fa-solid fa-microphone"></i></a>
+            </footer>
+            <!-- Fine sezione footer main central -->
+
+        </main>
+        <!-- FINE CONTAINER MAIN CENTRAL -->
+    </div>
+    <!-- /Contenitore elementi Vue JS -->
+
+    <!-- Collegamento Cdn VueJS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- /Collegamento Cdn VueJS  -->
+    <!-- Collegamento file JavaScript -->
+    <script src="js/main.js"></script>
+    <!-- /Collegamento file JavaScript -->
+</body>
+</html>

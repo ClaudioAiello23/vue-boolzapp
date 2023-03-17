@@ -11,6 +11,7 @@ createApp({
     data() {
         return {
             selectedContact: 0,
+            newSentMessage: '', 
             contacts: [
                 {
                     name: 'Michele',
@@ -194,6 +195,21 @@ createApp({
         corrispondente contatto nel main central*/
         activeContact (position) {
             this.selectedContact = position;
+        },
+        /*Funzione addMessage che seleziona l'array dei messaggi e aggiunge
+        un oggetto "messaggio" all'Array dell'interlocutore; la funzione viene
+        poi richiamata in html nel campo input messaggio del central Footer e 
+        si attiva alla pressione del tasto Enter per l'invio di un messaggio
+        alla conversazione; nel campo input aggiungere anche il v-model per 
+        replicare il testo digitato e trasmetterlo come messaggio. */
+        addMessage(){
+            this.contacts[this.selectedContact].messages.push(
+                {
+                    date: '',
+                    message: this.newSentMessage,
+                    status: 'sent'
+                });
+            this.newSentMessage = '';
         }
     } 
 }).mount('#app')

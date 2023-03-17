@@ -63,7 +63,7 @@
                         </a>
                     </div>
                     <div class="contact_aside_info">
-                        <div class="contact_name">{{ position }}{{ contact.name }}</div>
+                        <div class="contact_name">{{ contact.name }}</div>
                         <div class="contact_last_message">Ultimo messaggio inviato</div>
                     </div>
                     <div class="access_hour">12.00</div>
@@ -112,7 +112,7 @@
             <!-- Inizio sezione footer main central -->
             <footer class="footer_main flex">
                 <a href="#" class="smile_icon"><i class="fa-regular fa-face-smile"></i></a>
-                <input class="keyboard_mex" type="text" placeholder="Scrivi un messaggio">
+                <input class="keyboard_mex" type="text" placeholder="Scrivi un messaggio" v-model="newSentMessage" @keyup.enter="addMessage()">
                 <a href="#" class="microphone_icon"><i class="fa-solid fa-microphone"></i></a>
             </footer>
             <!-- Fine sezione footer main central -->

@@ -149,6 +149,7 @@ GLOBAL RULES
 .contact_box{
     border-bottom: 1px solid lightgray;
     padding: .3125rem 0;
+    cursor: pointer;
 }
 
 .contact_aside_info{
@@ -170,6 +171,10 @@ GLOBAL RULES
     align-self: start;
     font-size: .75rem;
     padding: .625rem .625rem 0 0;
+}
+
+.is_selected{
+    background-color: #e9ebeb;
 }
 
 /* SECTION CENTRAL CONTAINER */

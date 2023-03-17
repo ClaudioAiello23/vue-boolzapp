@@ -55,7 +55,7 @@
             <!-- Inizio sezione Aside contact -->
             <section class="contact_container">
                 <!-- Ciclo V-for (VueJS) per ciclare nome/immagine dell'object Array contacts file JS -->
-                <div class="contact_box flex" v-for="(contact, position) in contacts">
+                <div class="contact_box flex" v-for="(contact, position) in contacts" @click="activeContact(position)" v-bind:class="isSelected(position)">
                     <div class="img_box">
                         <a href="">
                             <!-- V-bind (VueJS) per agganciare la foto avatar dall'object Array contacts file JS -->
@@ -63,7 +63,7 @@
                         </a>
                     </div>
                     <div class="contact_aside_info">
-                        <div class="contact_name">{{ contact.name }}</div>
+                        <div class="contact_name">{{ position }}{{ contact.name }}</div>
                         <div class="contact_last_message">Ultimo messaggio inviato</div>
                     </div>
                     <div class="access_hour">12.00</div>
@@ -79,10 +79,10 @@
             <header class="header_main flex">
                 <div class="avatar_box flex">
                     <div class="img_box">
-                        <a href=""><img src="img/avatar_1.jpg" alt="avatar"></a>
+                        <a href=""><img v-bind:src="contacts[selectedContact].avatar" alt="avatar"></a>
                     </div>
                     <div class="contact_central_info">
-                        <div class="contact_name">Michele</div>
+                        <div class="contact_name">{{ contacts[selectedContact].name}}</div>
                         <div class="contact_last_access">Ultimo accesso oggi alle 12.00</div>
                     </div>
                 </div>
@@ -97,11 +97,11 @@
             <!-- Inizio sezione message container -->
             <section class="message_container flex">
                 <div v-for="(contact, position) in contacts" class="my_mex_box flex">
-                    <div class="my_mex">{{ contact.messages[position] }}</div>
+                    <div class="my_mex">{{ contacts[0].messages }}</div>
                     <div class="time_message">12.00</div>
                 </div>
                 <div class="contact_mex_box flex">
-                    <div class="contact_mex">{{ contacts[0].messages[0].message }}</div>
+                    <div class="contact_mex">prova</div>
                     <div class="time_message">12.00</div>
                 </div>
             </section>

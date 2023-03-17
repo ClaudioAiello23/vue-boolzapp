@@ -10,7 +10,7 @@ la funzione createApp*/
 createApp({
     data() {
         return {
-            contactIndex: 0,
+            selectedContact: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -178,14 +178,23 @@ createApp({
     },
     
     methods:{
-        /*Funzione che cerca la posizione del contatto selezionata; si può 
-        applicare al click su un contatto AsideBar per far apparire la
-        corrispondente conversazione nel main central*/
-        selectedContact (position) {
-            this.contactIndex = position;
+        /*Funzione isSelected che identifica un argomento "position" uguale alla
+        variabile selectedContact (che di base è uguale a zero); in questo caso
+        viene restituito il valore "is_selected" che corrisponde ad una
+        classe CSS (sfondo grigio); richiamando la funzione isSelected
+        sul contact_box aside Bar HTML, il contatto selezionato acquisirà
+        la classe CSS restituita e avrà uno sfondo diverso.*/
+        isSelected(position) {
+            if (position === this.selectedContact) {
+                return 'is_selected';
+            }
         },
-        
-    }
-    
+        /*Funzione activeContact che cerca la posizione del contatto selezionata; 
+        si può applicare al click su un contatto AsideBar per far apparire il
+        corrispondente contatto nel main central*/
+        activeContact (position) {
+            this.selectedContact = position;
+        }
+    } 
 }).mount('#app')
 

@@ -201,11 +201,11 @@ GLOBAL RULES
     height: calc(var(--container_height) - var(--header_footer_height)*2);
     background-image: url(../img/mine.jpg);
     overflow: auto;
+    padding: 3.125rem 5rem;
 }
 
 .message_box{
     flex-direction: column;
-    padding: 1.5625rem 9.375rem;
 }
 
 .my_mex_box, .contact_mex_box{

@@ -11,7 +11,7 @@ createApp({
     data() {
         return {
             selectedContact: 0,
-            newSentMessage: '', 
+            newSentMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -210,7 +210,23 @@ createApp({
                     status: 'sent'
                 });
             this.newSentMessage = '';
-        }
+        },
+        /*Funzione addReceived che, come addMessage, aggancia un nuovo 
+        oggetto "messaggio" all'Array messaggi dell'utente, in status
+        "received"; impostato un tempo di 1 secondo; richiamata questa 
+        funzione sempre dal campo input "scrivi messaggio"; quando
+        il mittente scrive un messaggio e preme ENTER, dopo 1 secondo
+        apparirà la risposta 'ok' impostata dalla seguente funzione*/
+        addReceived(){
+            setTimeout(() => {
+                this.contacts[this.selectedContact].messages.push(
+                    {
+                        date: '',
+                        message: 'ok',
+                        status: 'received'
+                    });
+            },  1000);
+        }  
     } 
 }).mount('#app')
 

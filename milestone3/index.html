@@ -112,7 +112,7 @@
             <!-- Inizio sezione footer main central -->
             <footer class="footer_main flex">
                 <a href="#" class="smile_icon"><i class="fa-regular fa-face-smile"></i></a>
-                <input class="keyboard_mex" type="text" placeholder="Scrivi un messaggio" v-model="newSentMessage" @keyup.enter="addMessage()">
+                <input class="keyboard_mex" type="text" placeholder="Scrivi un messaggio" v-model="newSentMessage" @keyup.enter="addMessage() + addReceived()">
                 <a href="#" class="microphone_icon"><i class="fa-solid fa-microphone"></i></a>
             </footer>
             <!-- Fine sezione footer main central -->

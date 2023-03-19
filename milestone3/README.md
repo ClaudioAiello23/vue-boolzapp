@@ -12,4 +12,4 @@ parte A:
 - per inviare il messaggio dal DOM si dovrà premere il tasto INVIO, pertanto andrà impostato l'invio con un evento keyup.enter nel campo input html.
 
 parte B:
-- si dovrà impostare una funzione di tipo Timeout (probabilmente da impostare in un ciclo di vita "mounted" sul file JS-Vuejs) che, 1 secondo dopo aver inviato il messaggio, faccia apparire una risposta (status "received") con testo "ok".
+- si dovrà impostare una funzione di tipo Timeout che, 1 secondo dopo aver inviato il messaggio mittente, faccia apparire una risposta (status "received") con testo "ok".

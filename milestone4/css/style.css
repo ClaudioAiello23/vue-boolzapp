@@ -36,7 +36,7 @@ COMMON RULES
 
 body{
     height: var(--default_height);
-    background-color: #009688; /* For browsers that do not support gradients */
+    background-color: #009688; /* colore per browser che non supportano gradient */
     background-image: linear-gradient(to top, #dbdbd3 80%, #009688 80%); 
     justify-content: center;
     align-items: center;
@@ -63,6 +63,7 @@ GLOBAL RULES
     width: var(--aside_width);
     height: inherit;
     background-color: white;
+    flex-direction: column;
 }
 
 .aside_header, .header_main{
@@ -142,12 +143,11 @@ GLOBAL RULES
 
 /* Aside contacts */
 .contact_container{
-    height: calc(var(--container_height) - 19.375rem);
     overflow: auto;
 }
 
 .contact_box{
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid rgb(238, 237, 237);
     padding: .3125rem 0;
     cursor: pointer;
 }

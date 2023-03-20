@@ -205,11 +205,12 @@ createApp({
         funziona a prescindere che si digiti in maiuscolo o in minuscolo)*/
         searchContacts() {
             if (this.searchLetter !== '') {
-                return this.contacts.filter(element => element.name.toLowerCase().includes(this.searchLetter.toLowerCase()));
-
+                 this.filteredContacts = this.contacts.filter(element => element.name.toLowerCase().includes(this.searchLetter.toLowerCase()));
+                console.log(this.filteredContacts);
+                return this.filteredContacts
             } else {
-                return this.contacts;
-            } 
+                return this.filteredContacts = this.contacts;
+            }
         },
 
         /*Funzione isSelected che identifica un argomento "position" uguale alla

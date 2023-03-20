@@ -82,10 +82,10 @@
             <header class="header_main flex">
                 <div class="avatar_box flex">
                     <div class="img_box">
-                        <a href=""><img v-bind:src="contacts[selectedContact].avatar" alt="avatar"></a>
+                        <a href=""><img v-bind:src="filteredContacts[selectedContact].avatar" alt="avatar"></a>
                     </div>
                     <div class="contact_central_info">
-                        <div class="contact_name">{{ contacts[selectedContact].name}}</div>
+                        <div class="contact_name">{{ filteredContacts[selectedContact].name}}</div>
                         <div class="contact_last_access">Ultimo accesso oggi alle 12.00</div>
                     </div>
                 </div>

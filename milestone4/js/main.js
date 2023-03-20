@@ -14,6 +14,7 @@ createApp({
             newSentMessage: '',
             randomHour: 0,
             randoMinute: 0,
+            searchLetter: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -188,6 +189,22 @@ createApp({
         genRandomMinute(randomMinute, min, max) {
             randomMinute = Math.floor(Math.random() * (max - min + 1) ) + min;
             return randomMinute;
+        },
+        /*Funzione searchContacts che, se il campo di ricerca contatti non contiene lettere,
+        mostra l'array di partenza 'contacts'; in caso di inserimento lettere nel campo 
+        Search viene creato dall'array 'contacts' un array "filtro" che mostra nell'elenco
+        contatti solo quelli che includono le lettere digitate nel nome dell'elemento dell'Array.
+        La funzione è stata poi richiamata nell'input SEARCH in HTML (con le istruzioni @keyup e 
+        v-model per l'individuazione delle lettere digitate); in più la funzione è stata richiamata
+        in HTML nel box dei contatti all'interno dell'istruzione v-for (in caso non vengano digitate 
+        lettere nel campo Search, verranno ciclati e mostrati tutti i contatti dell'array principale).*/
+        searchContacts() {
+            if (this.searchLetter !== '') {
+                return this.contacts.filter(element => element.name.includes(this.searchLetter));
+
+            } else {
+                return this.contacts;
+            } 
         },
         /*Funzione isSelected che identifica un argomento "position" uguale alla
         variabile selectedContact (che di base è uguale a zero); in questo caso

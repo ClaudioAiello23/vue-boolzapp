@@ -48,14 +48,17 @@
             <!-- Inizio sezione Aside search bar -->
             <section class="search_form flex">
                 <div class="search_icon"><i class="fa fa-search"></i></div>
-                <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
+                <input @keyup="searchContacts()"  v-model="searchLetter" type="text" placeholder="Cerca o inizia una nuova chat" name="search">
             </section>
             <!-- Fine sezione Aside search bar -->
 
             <!-- Inizio sezione Aside contact -->
             <section class="contact_container">
                 <!-- Ciclo V-for (VueJS) per ciclare nome/immagine dell'object Array contacts file JS -->
-                <div class="contact_box flex" v-for="(contact, position) in contacts" @click="activeContact(position)" v-bind:class="isSelected(position)">
+                <!-- Successivamente modificato "contacts" in searchContacts per collegare l'elenco contatti
+                al tasto input Search; quando search è vuoto verranno visualizzati tutti i contatti, in caso
+                contrario verranno visualizzati solo i contatti che contengono le lettere digitate in Search -->
+                <div class="contact_box flex" v-for="(contact, position) in searchContacts()" @click="activeContact(position)" v-bind:class="isSelected(position)">
                     <div class="img_box">
                         <a href="">
                             <!-- V-bind (VueJS) per agganciare la foto avatar dall'object Array contacts file JS -->
@@ -99,11 +102,11 @@
                 <div class="message_box flex" v-for="(mex, position) in contacts[selectedContact].messages">
                     <div v-if="mex.status === 'sent'" class="my_mex_box flex">
                         <div class="my_mex">{{ mex.message }}</div>
-                        <div class="time_message">{{ mex.date }}</div>
+                        <div class="time_message">12:00</div>
                     </div>
                     <div v-else class="contact_mex_box flex">
                         <div class="contact_mex">{{ mex.message }}</div>
-                        <div class="time_message">{{ mex.date }}</div>
+                        <div class="time_message">12:00</div>
                     </div>
                 </div>
             </section>

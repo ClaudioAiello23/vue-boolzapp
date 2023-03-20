@@ -11,3 +11,4 @@ Svolgimento:
 - fix milestone precedenti: lista contatti Aside, reso il bordo meno visibile;
 - fix milestone precedenti: lista contatti Aside, rimossa l'altezza calcolata male e gestito il tutto inserendo un flex dir.column sul contenitore principale aside; in questo modo, inserendo l'overflow CSS sul box principale dei contatti, si è sistemata la barra overflow che ora si estende fino al bordo inferiore del container.
 - miglioramento comportamento responsive con media query, restringimento aside container con schermo più ristretto.
+- inserimento data automatica casuale in caso di invio nuovi messaggi (impostate 2 funzioni in methods VueJS per le ore e i minuti).

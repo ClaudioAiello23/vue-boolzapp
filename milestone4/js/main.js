@@ -12,6 +12,8 @@ createApp({
         return {
             selectedContact: 0,
             newSentMessage: '',
+            randomHour: 0,
+            randoMinute: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -179,6 +181,14 @@ createApp({
     },
     
     methods:{
+        genRandomHour(randomHour, min, max) {
+            randomHour = Math.floor(Math.random() * (max - min + 1) ) + min;
+            return randomHour;
+        },
+        genRandomMinute(randomMinute, min, max) {
+            randomMinute = Math.floor(Math.random() * (max - min + 1) ) + min;
+            return randomMinute;
+        },
         /*Funzione isSelected che identifica un argomento "position" uguale alla
         variabile selectedContact (che di base è uguale a zero); in questo caso
         viene restituito il valore "is_selected" che corrisponde ad una
@@ -205,7 +215,7 @@ createApp({
         addMessage(){
             this.contacts[this.selectedContact].messages.push(
                 {
-                    date: '',
+                    date: this.genRandomHour(this.randomHour, 0, 23) + ':' + this.genRandomMinute(this.randomMinute, 0, 59),
                     message: this.newSentMessage,
                     status: 'sent'
                 });
@@ -221,7 +231,7 @@ createApp({
             setTimeout(() => {
                 this.contacts[this.selectedContact].messages.push(
                     {
-                        date: '',
+                        date: this.genRandomHour(this.randomHour, 0, 23) + ':' + this.genRandomMinute(this.randomMinute, 0, 59),
                         message: 'ok',
                         status: 'received'
                     });

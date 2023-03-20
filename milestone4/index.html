@@ -99,11 +99,11 @@
                 <div class="message_box flex" v-for="(mex, position) in contacts[selectedContact].messages">
                     <div v-if="mex.status === 'sent'" class="my_mex_box flex">
                         <div class="my_mex">{{ mex.message }}</div>
-                        <div class="time_message">12.00</div>
+                        <div class="time_message">{{ mex.date }}</div>
                     </div>
                     <div v-else class="contact_mex_box flex">
                         <div class="contact_mex">{{ mex.message }}</div>
-                        <div class="time_message">12.00</div>
+                        <div class="time_message">{{ mex.date }}</div>
                     </div>
                 </div>
             </section>
@@ -125,6 +125,9 @@
     <!-- Collegamento Cdn VueJS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- /Collegamento Cdn VueJS  -->
+    <!-- Collegamento Cdn Luxon Library (for Date)-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js" integrity="sha256-Nn+JGDrq3PuTxcDfJmmI0Srj5LpfOFlKqEiPwQK7y40=" crossorigin="anonymous"></script>
+    <!-- /Collegamento Cdn Luxon Library (for Date)-->
     <!-- Collegamento file JavaScript -->
     <script src="js/main.js"></script>
     <!-- /Collegamento file JavaScript -->

@@ -131,13 +131,13 @@ GLOBAL RULES
 .aside_container .search_icon {
     padding: .625rem 1.875rem;
     background-color: white;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(238, 237, 237);
 }
 
 .aside_container input{
     flex-grow: 1;
     padding: .625rem;
-    border: 1px solid lightgray
+    border: 1px solid rgb(238, 237, 237);
 }
 
 /* Aside contacts */

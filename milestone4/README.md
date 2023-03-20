@@ -7,4 +7,5 @@ contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> 
 “mar” rimangono solo Marco e Martina)
 
 Svolgimento:
-- fix time message nel main central; inserita data messaggio più in basso nel box message.
+- fix mileston precedenti: time message nel main central; inserita data messaggio più in basso nel box message;
+- fix mileston precedenti: - reso il bordo meno visibile;

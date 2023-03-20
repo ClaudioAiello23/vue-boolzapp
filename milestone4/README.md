@@ -10,3 +10,4 @@ Svolgimento:
 - fix milestone precedenti: time message nel main central; inserita data messaggio più in basso nel box message;
 - fix milestone precedenti: lista contatti Aside, reso il bordo meno visibile;
 - fix milestone precedenti: lista contatti Aside, rimossa l'altezza calcolata male e gestito il tutto inserendo un flex dir.column sul contenitore principale aside; in questo modo, inserendo l'overflow CSS sul box principale dei contatti, si è sistemata la barra overflow che ora si estende fino al bordo inferiore del container.
+- miglioramento comportamento responsive con media query, restringimento aside container con schermo più ristretto.

@@ -259,3 +259,27 @@ footer .keyboard_mex{
     padding: 0 1.875rem 0 1.875rem;
     font-size: 1.5625rem;
 }
+
+
+
+/* MEDIA QUERIES PER MIGLIORAMENTO RESPONSIVE -RESTRINGIMENTO ASIDE CONTAINER */
+@media screen and (max-width: 1200px) {
+    .aside_container{
+        width: 40%;
+    }
+
+    .central_container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 878px) {
+    .aside_container{
+        width: 30%;
+    }
+
+    .central_container{
+        width: 70%;
+    }
+}
+

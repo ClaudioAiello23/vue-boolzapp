@@ -210,7 +210,6 @@ GLOBAL RULES
 
 .my_mex_box, .contact_mex_box{
     border-radius: .3125rem;
-    padding: 0.625rem .3125rem 0.625rem 0.625rem;
 }
 
 .my_mex_box{
@@ -219,6 +218,10 @@ GLOBAL RULES
     margin-bottom: .5rem;
     justify-content: space-between;
     background-color: #d5f9ba;
+}
+
+.my_mex, .contact_mex{
+    padding: 0.625rem .3125rem 0.625rem 0.625rem;
 }
 
 .contact_mex_box{
@@ -233,6 +236,7 @@ GLOBAL RULES
     font-size: .625rem;
     color: grey;
     align-self: end;
+    padding: 0 .125rem .125rem 0;
 }
 
 /* Central footer */

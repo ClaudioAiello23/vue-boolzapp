@@ -14,3 +14,4 @@ Svolgimento:
 - inserimento data automatica casuale in caso di invio nuovi messaggi (impostate 2 funzioni in methods VueJS per le ore e i minuti).
 - Milestone4: inserimento funzione per filtrare i nomi dell'Array dei contatti, in modo da utilizzare il campo Search in maniera corretta e visualizzare soltanto i contatti che contengono le lettere digitate nel campo input. Richiamata la funzione in HTML sia nel campo Search sia nel ciclo v-for del box contatti, in modo da visualizzare solo i contatti filtrati dalle lettere digitate nel Search, e mostrare invece tutti i contatti se il campo Search viene svuotato.
 - Milestone4: miglioramento funzione per filtrare i nomi dell'Array contatti nel campo Search; aggiunto il controllo che permette un confronto più preciso grazie alla funzione toLowerCase();
+- inserimento funzione per mettere l'orario corrente durante l'invio di un nuovo messaggio. Impostata una IF per distinguere dal messaggio già presente nell'array di base.

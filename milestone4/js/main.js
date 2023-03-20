@@ -180,7 +180,10 @@ createApp({
     },
     
     methods:{
-
+        /*Funzione newTimeMex che dichiara la variabile Data() di JS, e
+        crea nuova variabile 'time' che estrapola l'ora e i minuti; funzione
+        utilizzata per mostrare l'orario corrente di invio di un nuovo
+        messaggio. Richiamata nelle successive funzioni addMessage/addReceived*/
         newTimeMex() {
             let data = new Date();
             let time;

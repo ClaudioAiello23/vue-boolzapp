@@ -102,11 +102,13 @@
                 <div class="message_box flex" v-for="(mex, position) in contacts[selectedContact].messages">
                     <div v-if="mex.status === 'sent'" class="my_mex_box flex">
                         <div class="my_mex">{{ mex.message }}</div>
-                        <div class="time_message">{{ mex.date }}</div>
+                        <div v-if="mex.date === this.newTimeMex()" class="time_message">{{ newTimeMex() }}</div>
+                        <div v-else class="time_message">12:00</div>
                     </div>
                     <div v-else class="contact_mex_box flex">
                         <div class="contact_mex">{{ mex.message }}</div>
-                        <div class="time_message">{{ mex.date }}</div>
+                        <div v-if="mex.date === this.newTimeMex()" class="time_message">{{ newTimeMex() }}</div>
+                        <div v-else class="time_message">12:00</div>
                     </div>
                 </div>
             </section>

@@ -12,8 +12,6 @@ createApp({
         return {
             selectedContact: 0,
             newSentMessage: '',
-            randomHour: 0,
-            randoMinute: 0,
             searchLetter: '',
             contacts: [
                 {
@@ -182,30 +180,35 @@ createApp({
     },
     
     methods:{
-        genRandomHour(randomHour, min, max) {
-            randomHour = Math.floor(Math.random() * (max - min + 1) ) + min;
-            return randomHour;
+
+        newTimeMex() {
+            let data = new Date();
+            let time;
+            time = data.getHours() + ":" + data.getMinutes();
+            return time;
         },
-        genRandomMinute(randomMinute, min, max) {
-            randomMinute = Math.floor(Math.random() * (max - min + 1) ) + min;
-            return randomMinute;
-        },
+
         /*Funzione searchContacts che, se il campo di ricerca contatti non contiene lettere,
         mostra l'array di partenza 'contacts'; in caso di inserimento lettere nel campo 
-        Search viene creato dall'array 'contacts' un array "filtro" che mostra nell'elenco
-        contatti solo quelli che includono le lettere digitate nel nome dell'elemento dell'Array.
-        La funzione è stata poi richiamata nell'input SEARCH in HTML (con le istruzioni @keyup e 
-        v-model per l'individuazione delle lettere digitate); in più la funzione è stata richiamata
-        in HTML nel box dei contatti all'interno dell'istruzione v-for (in caso non vengano digitate 
-        lettere nel campo Search, verranno ciclati e mostrati tutti i contatti dell'array principale).*/
+        Search viene creato dall'array 'contacts' un array "filtrato" che mostra nell'elenco
+        contatti dell'Aside solo quelli che includono le lettere digitate nel nome dell'elemento
+        dell'Array. La funzione è stata poi richiamata nell'input SEARCH in HTML (con le istruzioni
+        @keyup e v-model per l'individuazione delle lettere digitate); in più la funzione è stata
+        richiamata in HTML nel box dei contatti all'interno dell'istruzione v-for (in caso non 
+        vengano digitate lettere nel campo Search, verranno ciclati e mostrati tutti i contatti 
+        dell'array principale). NB nel primo return è stata aggiunta una funzione utile per il 
+        confronto, chiamata 'toLowerCase(); questa funzione "traduce" in minuscolo tutte le lettere
+        dei contatti e tutte le lettere digitate nel campo search, per un confronto più preciso ( che
+        funziona a prescindere che si digiti in maiuscolo o in minuscolo)*/
         searchContacts() {
             if (this.searchLetter !== '') {
-                return this.contacts.filter(element => element.name.includes(this.searchLetter));
+                return this.contacts.filter(element => element.name.toLowerCase().includes(this.searchLetter.toLowerCase()));
 
             } else {
                 return this.contacts;
             } 
         },
+
         /*Funzione isSelected che identifica un argomento "position" uguale alla
         variabile selectedContact (che di base è uguale a zero); in questo caso
         viene restituito il valore "is_selected" che corrisponde ad una
@@ -217,12 +220,14 @@ createApp({
                 return 'is_selected';
             }
         },
+
         /*Funzione activeContact che cerca la posizione del contatto selezionata; 
         si può applicare al click su un contatto AsideBar per far apparire il
         corrispondente contatto nel main central*/
         activeContact (position) {
             this.selectedContact = position;
         },
+
         /*Funzione addMessage che seleziona l'array dei messaggi e aggiunge
         un oggetto "messaggio" all'Array dell'interlocutore; la funzione viene
         poi richiamata in html nel campo input messaggio del central Footer e 
@@ -232,12 +237,13 @@ createApp({
         addMessage(){
             this.contacts[this.selectedContact].messages.push(
                 {
-                    date: this.genRandomHour(this.randomHour, 0, 23) + ':' + this.genRandomMinute(this.randomMinute, 0, 59),
+                    date: this.newTimeMex(),
                     message: this.newSentMessage,
                     status: 'sent'
                 });
             this.newSentMessage = '';
         },
+
         /*Funzione addReceived che, come addMessage, aggancia un nuovo 
         oggetto "messaggio" all'Array messaggi dell'utente, in status
         "received"; impostato un tempo di 1 secondo; richiamata questa 
@@ -248,7 +254,7 @@ createApp({
             setTimeout(() => {
                 this.contacts[this.selectedContact].messages.push(
                     {
-                        date: this.genRandomHour(this.randomHour, 0, 23) + ':' + this.genRandomMinute(this.randomMinute, 0, 59),
+                        date: this.newTimeMex(),
                         message: 'ok',
                         status: 'received'
                     });

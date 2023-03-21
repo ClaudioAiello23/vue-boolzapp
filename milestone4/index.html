@@ -99,7 +99,7 @@
 
             <!-- Inizio sezione message container -->
             <section class="message_container">
-                <div class="message_box flex" v-for="(mex, position) in contacts[selectedContact].messages">
+                <div class="message_box flex" v-for="(mex, position) in filteredContacts[selectedContact].messages">
                     <div v-if="mex.status === 'sent'" class="my_mex_box flex">
                         <div class="my_mex">{{ mex.message }}</div>
                         <div v-if="mex.date === this.newTimeMex()" class="time_message">{{ newTimeMex() }}</div>

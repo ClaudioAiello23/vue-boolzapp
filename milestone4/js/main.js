@@ -204,7 +204,7 @@ createApp({
         dei contatti e tutte le lettere digitate nel campo search, per un confronto più preciso ( che
         funziona a prescindere che si digiti in maiuscolo o in minuscolo)*/
         searchContacts() {
-            if (this.searchLetter !== '') {
+            if (this.searchLetter) {
                  this.filteredContacts = this.contacts.filter(element => element.name.toLowerCase().includes(this.searchLetter.toLowerCase()));
                 console.log(this.filteredContacts);
                 return this.filteredContacts
@@ -239,7 +239,7 @@ createApp({
         alla conversazione; nel campo input aggiungere anche il v-model per 
         replicare il testo digitato e trasmetterlo come messaggio. */
         addMessage(){
-            this.contacts[this.selectedContact].messages.push(
+            this.filteredContacts[this.selectedContact].messages.push(
                 {
                     date: this.newTimeMex(),
                     message: this.newSentMessage,
@@ -256,7 +256,7 @@ createApp({
         apparirà la risposta 'ok' impostata dalla seguente funzione*/
         addReceived(){
             setTimeout(() => {
-                this.contacts[this.selectedContact].messages.push(
+                this.filteredContacts[this.selectedContact].messages.push(
                     {
                         date: this.newTimeMex(),
                         message: 'ok',
